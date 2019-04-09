@@ -10,9 +10,9 @@ public class ExpressionTree{
       return getValue() + "";
     }
     if (isOp()) {
-      return getLeft().toStringPostfix() + " " + getOp() + " " + getRight().toStringPostfix();
+      return "(" + getLeft().toString() + " " + getOp() + " " + getRight().toString() + " )";
     }
-    return "";
+    return  "";
   }
 
   /*return the expression as a postfix notation string without parenthesis*/
@@ -138,7 +138,7 @@ public class ExpressionTree{
     ExpressionTree b = new ExpressionTree(2.0);
 
     ExpressionTree c = new ExpressionTree('+',a,b);
-    System.out.println(c);
+    System.out.println("String: " + c);
     System.out.println("Postfix: " + c.toStringPostfix());
     System.out.println("Prefix: " + c.toStringPrefix());
     System.out.println("Evaluate: Should be 6: " + c.evaluate());//6.0
